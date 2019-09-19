@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import   Creditcard from'./Card.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const rendernumber=number=>{
+number=number.toString();
+let result='';
+for( let i=0; i<number.length;i+=4)
+{
+
+  result=number.slice(i, i+4)+ ''
 }
+return result;
+}
+function App() {
+    return (
+      
+      <Creditcard 
+      companyname='CREDITCARD'
+      cardNumber='7542 8888 4591 3597'
+      validThru='11/50'
+      cardholder='CARDHOLDER'
+      />
+    );
+  }
+  
+  export default App;
 
-export default App;
+  
